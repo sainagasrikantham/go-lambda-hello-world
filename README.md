@@ -6,7 +6,7 @@ You have already created an S3 bucket, an IAM role that can invoke the lambda fu
 
 Start by cloning the repo.
 
-Go ahead and build the the code:
+Go ahead and build the the code (IMPORTANT: Note the param `GOOS=linux`, this is needed for the code to execute on AWS. Otherwise you'll see `exec format error` in your CloudWatch logs:
 `GOOS=linux go build lambdaHello.go`
 
 Next, ZIP the file up:
