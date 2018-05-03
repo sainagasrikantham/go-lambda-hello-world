@@ -17,3 +17,11 @@ Upload the ZIP file to an S3 bucket:
 
 Invoke the function:
 `aws lambda invoke --function-name <lambda-function-name> o.txt`
+
+Assuming everything went well, you should see the following output:
+`{
+    "ExecutedVersion": "$LATEST", 
+    "StatusCode": 200
+}`
+
+You can always `cat` the file `o.txt` and see what the function returned. In our case, it will be `null` as the code doesn't retun anything but `nil`.
