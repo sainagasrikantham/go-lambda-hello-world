@@ -4,18 +4,21 @@ Hello World app for AWS Lambda in Go!
 Assumptions:
 You have already created an S3 bucket, an IAM role that can invoke the lambda function (with policy `AWSLambdaBasicExecutionRole`) and the function itself -- by selecting `Go 1.x` as the runtime environment -- using the AWS console or CLI.
 
-Start by cloning the repo.
+Now, follow the steps below:
 
-Go ahead and build the the code (IMPORTANT: Note the param `GOOS=linux`, this is needed for the code to execute on AWS. Otherwise you'll see `exec format error` in your CloudWatch logs:
-`GOOS=linux go build lambdaHello.go`
+1) Start by cloning the repo.
 
-Next, ZIP the file up:
+2) Go ahead and build the the code using the command `GOOS=linux go build lambdaHello.go`
+IMPORTANT: Note the param `GOOS=linux`, this is needed for the code to execute on AWS. Otherwise you'll see `exec format error` in your CloudWatch logs.
+
+
+3) Next, ZIP the file up:
 `zip lambdaHello.zip lambdaHello`
 
-Upload the ZIP file to an S3 bucket:
+4) Upload the ZIP file to an S3 bucket:
 `aws s3 cp lambdaHello.zip s3://<my-bucket-name>`
 
-Invoke the function:
+5) Invoke the function:
 `aws lambda invoke --function-name <lambda-function-name> o.txt`
 
 Assuming everything went well, you should see the following output:
