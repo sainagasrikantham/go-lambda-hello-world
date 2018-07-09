@@ -6,7 +6,7 @@ You have already created an S3 bucket, an IAM role that can invoke the lambda fu
 
 Now, follow the steps below:
 
-1) Start by cloning the repo.
+1) Start by cloning the repo via command `go get github.com/sainagasrikantham/go-lambda-hello-world`
 
 2) Go ahead and build the the code using the command `GOOS=linux go build lambdaHello.go`
 IMPORTANT: Note the param `GOOS=linux`, this is needed for the code to execute on AWS. Otherwise you'll see `exec format error` in your CloudWatch logs.
